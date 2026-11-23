@@ -2,7 +2,7 @@ import java.util.Random;
 
 public class Sorts {
 
-    // Generate an array with random numbers
+   
     public static int[] initValues(int size) {
         Random random = new Random();
         int[] array = new int[size];
@@ -14,7 +14,7 @@ public class Sorts {
         return array;
     }
 
-    // Check if the array is sorted
+   
     public static boolean isSorted(int[] array) {
         for (int i = 0; i < array.length - 1; i++) {
             if (array[i] > array[i + 1]) {
@@ -25,14 +25,14 @@ public class Sorts {
         return true;
     }
 
-    // Swap two elements
+    
     public static void swap(int[] array, int indexOne, int indexTwo) {
         int temp = array[indexOne];
         array[indexOne] = array[indexTwo];
         array[indexTwo] = temp;
     }
 
-    // Print the array
+    
     public static void printValues(int[] array) {
         for (int i = 0; i < array.length; i++) {
             System.out.print(array[i] + " ");
@@ -44,4 +44,30 @@ public class Sorts {
 
         System.out.println();
     }
+
+  
+    public static int minIndex(int[] array, int start) {
+        int min = start;
+
+        for (int i = start + 1; i < array.length; i++) {
+            if (array[i] < array[min]) {
+                min = i;
+            }
+        }
+
+        return min;
+    }
+
+   
+    public static void selectionSort(int[] array) {
+        for (int i = 0; i < array.length - 1; i++) {
+
+            int min = minIndex(array, i);
+
+            swap(array, i, min);
+        }
+    }
+
+
+
 }

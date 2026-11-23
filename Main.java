@@ -2,16 +2,20 @@ public class Main {
 
     public static void main(String[] args) {
 
-        // Create an array with 50 random numbers
         int[] numbers = Sorts.initValues(50);
 
         System.out.println("Original Array:");
-
-        // Display the array
         Sorts.printValues(numbers);
 
-        // Check if the array is sorted
+       
+        Sorts.selectionSort(numbers);
+
+        System.out.println("Sorted Array:");
+        Sorts.printValues(numbers);
+
+        // Verify sorting
         System.out.println("Is the array sorted? "
                 + Sorts.isSorted(numbers));
     }
 }
+
